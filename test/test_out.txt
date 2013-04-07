@@ -1,0 +1,32 @@
+Loaded suite /var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/rake_test_loader
+Started
+I, [2013-04-07T19:50:06.645982 #2490]  INFO -- : 1km test start
+I, [2013-04-07T19:50:06.659256 #2490]  INFO -- : gunzip starting
+I, [2013-04-07T19:50:09.690298 #2490]  INFO -- : gunzip ended
+I, [2013-04-07T19:50:09.690776 #2490]  INFO -- : gunzip took: 3.030677021s
+I, [2013-04-07T19:50:09.691027 #2490]  INFO -- : 1km rendering start
+I, [2013-04-07T19:50:17.367898 #2490]  INFO -- : 1km rendering end
+I, [2013-04-07T19:50:17.368361 #2490]  INFO -- : 1km rendering took: 7.67669375s
+I, [2013-04-07T19:50:17.369036 #2490]  INFO -- : 1km save file start
+I, [2013-04-07T19:50:18.140531 #2490]  INFO -- : 1km save file end
+I, [2013-04-07T19:50:18.140929 #2490]  INFO -- : 1km save file took: 0.77126638s
+I, [2013-04-07T19:50:18.141227 #2490]  INFO -- : 1km test end
+I, [2013-04-07T19:50:18.141400 #2490]  INFO -- : 1km test took: 11.494715666s
+..I, [2013-04-07T19:50:18.142555 #2490]  INFO -- : 250m test start
+I, [2013-04-07T19:50:18.145056 #2490]  INFO -- : gunzip starting
+I, [2013-04-07T19:51:08.044675 #2490]  INFO -- : gunzip ended
+I, [2013-04-07T19:51:08.077413 #2490]  INFO -- : gunzip took: 49.899378809s
+I, [2013-04-07T19:51:08.077761 #2490]  INFO -- : 250m rendering start
+I, [2013-04-07T19:52:38.293335 #2490]  INFO -- : 250m rendering end
+I, [2013-04-07T19:52:38.293747 #2490]  INFO -- : 250m rendering took: 90.215428391s
+I, [2013-04-07T19:52:38.312692 #2490]  INFO -- : 250m save file start
+I, [2013-04-07T19:52:39.042690 #2490]  INFO -- : 250m save file end
+I, [2013-04-07T19:52:39.043107 #2490]  INFO -- : 250m save file took: 0.729613452s
+I, [2013-04-07T19:52:39.043268 #2490]  INFO -- : 250m test end
+I, [2013-04-07T19:52:39.043499 #2490]  INFO -- : 250m test took: 140.900410493s
+..
+Finished in 152.401918 seconds.
+
+4 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 53192
