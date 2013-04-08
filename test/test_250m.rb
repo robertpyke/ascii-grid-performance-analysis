@@ -19,7 +19,7 @@ class Test250mResolution < Test::Unit::TestCase
     logger.info("gunzip starting")
     start_t = Time.now
     Zlib::GzipReader.open(gz_ascii_path) do |gz|
-      file.write(gz.read)
+      IO.copy_stream(gz, file)
     end
     end_t = Time.now
     logger.info("gunzip ended")
@@ -62,7 +62,7 @@ class Test250mResolution < Test::Unit::TestCase
     FileUtils.mkdir_p(File.join(TestHelper.path_to_test_dir, 'outputs'))
     logger.info("250m save file start")
     start_save_file_t = Time.now
-    mapimage.save(File.join(TestHelper.path_to_test_dir, 'outputs', 'test.png'))
+    mapimage.save(File.join(TestHelper.path_to_test_dir, 'outputs', 'test_250m_out.png'))
     end_save_file_t = Time.now
     logger.info("250m save file end")
     logger.info("250m save file took: #{end_save_file_t - start_save_file_t}s")

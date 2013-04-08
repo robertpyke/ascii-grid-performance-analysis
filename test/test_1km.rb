@@ -62,7 +62,7 @@ class Test1kmResolution < Test::Unit::TestCase
     FileUtils.mkdir_p(File.join(TestHelper.path_to_test_dir, 'outputs'))
     logger.info("1km save file start")
     start_save_file_t = Time.now
-    mapimage.save(File.join(TestHelper.path_to_test_dir, 'outputs', 'test.png'))
+    mapimage.save(File.join(TestHelper.path_to_test_dir, 'outputs', 'test_1km_out.png'))
     end_save_file_t = Time.now
     logger.info("1km save file end")
     logger.info("1km save file took: #{end_save_file_t - start_save_file_t}s")
