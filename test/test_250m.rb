@@ -40,6 +40,49 @@ class Test250mResolution < Test::Unit::TestCase
     assert_equal true, true, "true should be true"
   end
 
+  def test_render_time_for_250m_via_geotiff_conversion
+    logger = TestHelper.logger
+    logger.info("250m geotiff test start")
+    start_t = Time.now
+
+    map = get_map_obj
+    map.setExtent(115, -50, 160, -10)
+    map.setSize(1024,1024)
+
+    layer = map.layers.first
+    asc_file = get_asc_file
+
+    logger.info("250m ascii to geotiff conversion start")
+    start_conv_t = Time.now
+    geotiff_file = TestHelper::convert_ascii_to_geotiff(asc_file.path)
+    end_conv_t = Time.now
+    layer.data = geotiff_file.path
+    logger.info("250m ascii to geotiff conversion end")
+    logger.info("250m ascii to geotiff conversion took: #{end_conv_t - start_conv_t}s")
+
+    logger.info("250m geotiff rendering start")
+    start_render_t = Time.now
+    mapimage = map.draw
+    end_render_t = Time.now
+    logger.info("250m geotiff rendering end")
+    logger.info("250m geotiff rendering took: #{end_render_t - start_render_t}s")
+
+    FileUtils.mkdir_p(File.join(TestHelper.path_to_test_dir, 'outputs'))
+    logger.info("250m geotiff save file start")
+    start_save_file_t = Time.now
+    mapimage.save(File.join(TestHelper.path_to_test_dir, 'outputs', 'test_250m_geotiff_out.png'))
+    end_save_file_t = Time.now
+    logger.info("250m geotiff save file end")
+    logger.info("250m geotiff save file took: #{end_save_file_t - start_save_file_t}s")
+
+    end_t = Time.now
+    logger.info("250m geotiff test end")
+    logger.info("250m geotiff test took: #{end_t - start_t}s")
+
+    asc_file.unlink
+    geotiff_file.unlink
+  end
+
   def test_render_time_for_250m
     logger = TestHelper.logger
     logger.info("250m test start")
@@ -73,5 +116,6 @@ class Test250mResolution < Test::Unit::TestCase
 
     asc_file.unlink
   end
+
 
 end

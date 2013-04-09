@@ -17,4 +17,14 @@ module TestHelper
     File.join(path_to_test_dir, 'fixtures', fixture_name)
   end
 
+  def TestHelper::convert_ascii_to_geotiff(ascii_path)
+    dest_file = Tempfile.new('geotiff')
+    dest_file.close()
+
+    `gdal_translate -of GTiff #{ascii_path} #{dest_file.path}`
+
+
+    dest_file
+  end
+
 end
